@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+
+    <artifactId>code</artifactId>
+    <version>2.0-RELEASE</version>
+
+    <name>Code: Root</name>
+
+    <parent>
+        <groupId>com.trivera.spring</groupId>
+        <artifactId>studentWork</artifactId>
+        <version>2.0-RELEASE</version>
+    </parent>
+
+    <properties>
+    </properties>
+
+    <modules>
+        <!-- TODO: see init profile for complete list of available modules -->
+        <!--<profile><id>all-modules</id></profile>-->
+    </modules>
+
+    <!--
+    ===========================================================================
+    == PROFILES
+    ===========================================================================
+    -->
+    <profiles>
+
+        <profile>
+            <id>all-modules</id>
+            <activation>
+                <!--Look in:
+                ${user.home}/settings.xml
+                or:
+                ${user.home}/settings-trivera.xml
+                or:
+                ${trivera_spring install DIR}/settings-WIN.xml
+                or:
+                ${trivera_spring install DIR}/settings-OSX.xml
+
+                -->
+                <!--<activeByDefault>true</activeByDefault>-->
+
+                <!-- To run this profile, use this command:
+                mvn -Denv=init
+                *** or ***
+                mvn -Pall-modules
+                -->
+                <property>
+                    <name>env</name>
+                    <value>init</value>
+                </property>
+            </activation>
+
+            <properties>
+                <maven.test.failure.ignore>false</maven.test.failure.ignore>
+                <maven.test.skip>false</maven.test.skip>
+                <junit.failIfNoTests>false</junit.failIfNoTests>
+            </properties>
+
+            <modules>
+                <!-- These should be commented out, so they become optional -->
+                <module>common</module>
+
+                <module>spring-hello-world</module>
+                <module>spring-configuration</module>
+                <module>spring-advanced-configuration</module>
+
+                <module>spring-jdbc</module>
+
+                <module>spring-aop-around</module>
+                <module>spring-aop-combined</module>
+                <module>spring-aop-annotations</module>
+
+                <module>spring-mvc</module>
+                <module>spring-mvc-interceptor</module>
+                <module>spring-mvc-validation</module>
+
+                <module>spring-rest</module>
+                <module>spring-rest-client</module>
+
+                <module>spring-rest-injection</module>
+
+                <module>spring-rest-json</module>
+                <module>spring-rest-client-json</module>
+
+                <module>spring-hibernate</module>
+
+            </modules>
+
+
+            <build>
+                <filters />
+                <resources />
+                <plugins />
+            </build>
+
+            <repositories />
+            <pluginRepositories />
+        </profile>
+
+        <!-- Just add the default Modules to this profile.
+        -->
+        <profile>
+            <id>default-modules</id>
+
+            <properties>
+                <maven.test.failure.ignore>false</maven.test.failure.ignore>
+                <maven.test.skip>false</maven.test.skip>
+                <junit.failIfNoTests>false</junit.failIfNoTests>
+            </properties>
+
+            <modules>
+                <!-- These should be commented out, so they become optional -->
+                <module>common</module>
+                <module>spring-hello-world</module>
+                <module>spring-configuration</module>
+                <module>spring-advanced-configuration</module>
+            </modules>
+        </profile>
+
+        <!-- Just add the JDBC Modules to this profile.
+        -->
+        <profile>
+            <id>jdbc-modules</id>
+
+            <properties>
+                <maven.test.failure.ignore>false</maven.test.failure.ignore>
+                <maven.test.skip>false</maven.test.skip>
+                <junit.failIfNoTests>false</junit.failIfNoTests>
+            </properties>
+
+            <modules>
+                <module>spring-jdbc</module>
+            </modules>
+        </profile>
+
+    </profiles>
+    <!--
+    ===========================================================================
+    == DEPENDENCY MANAGEMENT (dependencyManagement)
+    == TO see dependency tree: 'mvn dependency:tree'
+    ==
+    == Centrally manage all versions & transitive dependency versions
+    ===========================================================================
+    -->
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- Trivera Student Work dependencies -->
+            <dependency>
+                <groupId>com.trivera.spring.code</groupId>
+                <artifactId>common</artifactId>
+                <version>2.0-RELEASE</version>
+            </dependency>
+
+            <!-- We need the solution jdbc jar to work -->
+            <dependency>
+                <groupId>com.trivera.spring.code.spring-jdbc</groupId>
+                <artifactId>jdbc-solution</artifactId>
+                <version>2.0-RELEASE</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+    <!--====================================================================-->
+    <!-- DEPENDENCIES -->
+    <!-- TO see dependency tree: 'mvn dependency:tree' -->
+    <!--====================================================================-->
+    <dependencies>
+    </dependencies>
+
+</project>

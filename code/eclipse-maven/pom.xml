@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
+
+	<groupId>com.trivera.tutorial</groupId>
+	<artifactId>eclipse.maven</artifactId>
+	<name>Demos: Using Eclipse Maven</name>
+	<version>1.0.0-SNAPSHOT</version>
+	<description>${project.name}</description>
+
+	<organization>
+		<name>Trivera Technologies LLC</name>
+		<url>http://www.triveratech.com</url>
+	</organization>
+	<inceptionYear>2016</inceptionYear>
+	<properties>
+	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		
+		<maven.test.failure.ignore>false</maven.test.failure.ignore>
+		<maven.test.skip>false</maven.test.skip>
+
+		<java.source.version>1.8</java.source.version>
+		<java.target.version>1.8</java.target.version>
+		<java.compiler.arguments></java.compiler.arguments>
+		<java.test.compiler.arguments>-Xlint:all</java.test.compiler.arguments>
+
+		<maven.compiler.plugin>3.3</maven.compiler.plugin>
+		<maven.findbugs.plugin>3.0.3</maven.findbugs.plugin>
+		<maven.jar.plugin>2.6</maven.jar.plugin>
+		<jar.addClasspath>false</jar.addClasspath>
+
+		<maven.javadoc.plugin>2.10.3</maven.javadoc.plugin>
+	</properties>
+	<profiles>
+		<profile>
+			<id>strict</id>
+			<properties>
+				<maven.test.failure.ignore>false</maven.test.failure.ignore>
+				<junit.failIfNoTests>true</junit.failIfNoTests>
+				<maven.test.skip>false</maven.test.skip>
+			</properties>
+		</profile>
+	</profiles>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin}</version>
+				<configuration>
+					<source>${java.source.version}</source>
+					<target>${java.target.version}</target>
+				</configuration>
+				<executions>
+					<execution>
+						<id>default-compile</id>
+						<configuration>
+							<showDeprecation>true</showDeprecation>
+							<showWarnings>true</showWarnings>
+							<compilerArgs>
+								<arg>${java.compiler.arguments}</arg>
+							</compilerArgs>
+						</configuration>
+					</execution>
+					<execution>
+						<id>default-testCompile</id>
+						<configuration>
+							<showDeprecation>true</showDeprecation>
+							<showWarnings>true</showWarnings>
+							<compilerArgs>
+								<arg>-verbose</arg>
+								<arg>${java.test.compiler.arguments}</arg>
+							</compilerArgs>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>

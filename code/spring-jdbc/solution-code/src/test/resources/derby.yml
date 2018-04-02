@@ -1,0 +1,18 @@
+##---------------------------------------------------------------------------##
+## Derby Datasource properties
+##---------------------------------------------------------------------------##
+spring:
+  name: derby profile
+  datasource:
+    driverClassName: org.apache.derby.jdbc.ClientDriver
+    url: jdbc:derby://localhost:50505/springclass
+    username: sa
+    password: password
+
+    hibernate:
+      dialect: org.hibernate.dialect.DerbyDialect
+      schema_generation_action: drop-and-create #: none, create, drop-and-create, drop
+      schema_generation_create_source: script #: metadata, script, metadata-then-script, script-then-metadata
+      schema_generation_create_script_source: classpath:schema.sql
+      show_sql: true
+      format_sql: true

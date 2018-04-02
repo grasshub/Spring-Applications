@@ -1,0 +1,31 @@
+# Compiled output
+build
+target
+dist/
+
+# Logs
+logs
+.log
+
+# lock files
+.lock
+package-lock.json
+
+# metadata
+.metadata/
+
+# Coverage directory 
+coverage
+
+# Yarn Integrity file
+.yarn-integrity
+
+# IDEs and editors
+.project
+.settings
+.classpath
+Servers/
+RemoteSystemsTempFiles
+
+# System Files
+.DS_Store

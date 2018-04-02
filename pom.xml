@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+
+    <packaging>pom</packaging>
+
+    <groupId>com.trivera.spring</groupId>
+    <artifactId>studentWork</artifactId>
+    <version>2.0-RELEASE</version>
+
+    <name>StudentWork Parent</name>
+    <description>Trivera: Spring Root POM</description>
+    <organization>
+        <name>Trivera Tech, Inc.</name>
+        <url>http://www.triveratech.com</url>
+    </organization>
+    <inceptionYear>2015</inceptionYear>
+
+    <url>https://bitbucket.org/mickknutson/trivera_spring</url>
+
+    <parent>
+        <groupId>com.baselogic</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0.0-RELEASE</version>
+        <!-- FIXME: Want to see if I can omit this by putting the PARENT.pom in the REPO -->
+        <relativePath>./parent</relativePath>
+    </parent>
+
+
+    <issueManagement>
+        <url>https://bitbucket.org/mickknutson/trivera_spring/issues</url>
+        <system>BitBucket Issues</system>
+    </issueManagement>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>${scm.url}</url>
+        <connection>${scm.connection}</connection>
+        <developerConnection>${scm.developer.connection}</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>mickknutson</id>
+            <organization>BASE Logic, Inc.</organization>
+            <organizationUrl>http://baselogic.com</organizationUrl>
+            <name>Mick Knutson</name>
+            <email>mknutson@baselogic.com</email>
+            <roles>
+                <role>Architect</role>
+                <role>Designer</role>
+                <role>Developer</role>
+            </roles>
+            <timezone>+7 GMT</timezone>
+        </developer>
+        <developer>
+            <id>dancorsberg</id>
+            <organization>Trivera Technologies LLC</organization>
+            <organizationUrl>http://triveratech.com</organizationUrl>
+            <name>Dan Corsberg</name>
+            <email>danc@triveratech.com</email>
+            <roles>
+                <role>Architect</role>
+                <role>Designer</role>
+                <role>Developer</role>
+            </roles>
+            <timezone>+7 GMT</timezone>
+        </developer>
+        <developer>
+            <id>peterschmitz</id>
+            <organization>Trivera Technologies LLC</organization>
+            <organizationUrl>http://triveratech.com</organizationUrl>
+            <name>Peter Schmitz</name>
+            <email>peter.schmitz@triveratech.com</email>
+            <roles>
+                <role>Architect</role>
+                <role>Designer</role>
+                <role>Developer</role>
+            </roles>
+            <timezone>+1 GMT</timezone>
+        </developer>
+    </developers>
+
+    <distributionManagement>
+        <site>
+            <id>trivera.website</id>
+            <url>scp://baselogic.com/var/www/sites/baselogic.com/public/code/trivera_spring</url>
+        </site>
+
+        <!-- TODO: Must revisit -->
+        <repository>
+            <id>repo</id>
+            <url>https://bitbucket.org/mickknutson/trivera_spring</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshot-repo</id>
+            <url>https://bitbucket.org/mickknutson/trivera_spring</url>
+        </snapshotRepository>
+
+    </distributionManagement>
+
+    <!--
+    ===========================================================================
+    == PROPERTIES
+    ===========================================================================
+    -->
+    <properties>
+        <development.mode>development</development.mode>
+        <maven.test.skip>false</maven.test.skip>
+
+        <scm.connection>scm:git:https://mickknutson@bitbucket.org/mickknutson/trivera_spring</scm.connection>
+        <scm.developer.connection>scm:git:https://mickknutson@bitbucket.org/mickknutson/trivera_spring
+        </scm.developer.connection>
+        <scm.url>https://mickknutson@bitbucket.org/mickknutson/trivera_spring.git</scm.url>
+        <project.scm.id>bitbucket.org</project.scm.id>
+
+        <cobertura.ignore>com.springclass.domain.*</cobertura.ignore>
+        <cobertura.exclude>com/springclass/domain/**/*.class</cobertura.exclude>
+
+    </properties>
+
+
+    <!--
+    ===========================================================================
+    == PROFILES
+    ===========================================================================
+    -->
+    <profiles>
+        <profile>
+            <id>strict</id>
+            <properties>
+                <maven.test.failure.ignore>false</maven.test.failure.ignore>
+                <junit.failIfNoTests>true</junit.failIfNoTests>
+                <maven.test.skip>false</maven.test.skip>
+            </properties>
+        </profile>
+    </profiles>
+
+    <modules>
+        <module>code</module>
+    </modules>
+
+    <!--
+    ===========================================================================
+    == DEPENDENCY MANAGEMENT (dependencyManagement)
+    == TO see dependency tree: 'mvn dependency:tree'
+    ==
+    == Centrally manage all versions & transitive dependency versions
+    ===========================================================================
+    -->
+    <dependencyManagement>
+        <dependencies>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+    <!--
+    ===========================================================================
+    == DEPENDENCIES (dependencies)
+    == TO see dependency tree: 'mvn dependency:tree'
+    ==
+    == Centrally manage all versions & transitive dependency versions
+    ===========================================================================
+    -->
+    <dependencies>
+
+        <!--=== dependencies ===============================================-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+        </dependency>
+
+        <!-- should not use these on all modules -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+
+        <!-- AspectJ -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjtools</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+        </dependency>
+
+        <!--=== dependencies ===============================================-->
+
+        <!-- Common -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+        </dependency>
+
+
+        <!--=== dependencies ===============================================-->
+
+        <!-- Test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito</artifactId>
+        </dependency>
+
+        <!--=== dependencies ===============================================-->
+        <!--=== dependencies ===============================================-->
+        <!--=== dependencies ===============================================-->
+
+    </dependencies>
+
+
+    <!--
+    ===========================================================================
+    == BUILD details
+    ===========================================================================
+    -->
+    <build>
+
+        <!--================================================================-->
+        <!-- PLUGINS -->
+        <!--================================================================-->
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>${maven.scm.plugin}</version>
+                <configuration>
+                    <!--<username>mickknutson</username>
+                    <password>${scm:checkin}</password>-->
+                </configuration>
+            </plugin>
+
+            <!-- Usage:
+            mvn cleancobertura:cobertura
+            -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--
+       A quick run with reports:
+       mvn clean cobertura:cobertura javadoc:javadoc
+     -->
+    <reporting>
+        <plugins>
+        </plugins>
+    </reporting>
+
+
+    <!--================================================================-->
+    <!-- REPOSITORIES -->
+    <!--================================================================-->
+
+    <!--<repositories>
+
+        <repository>
+            <id>repo.maven.apache.org.maven2</id>
+            <name>Maven Repository</name>
+            <url>http://repo.maven.apache.org/maven2/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>spring.maven.release</id>
+            <name>Spring Release Repository</name>
+            <url>http://repo.springframework.org/release</url>
+        </repository>
+        <repository>
+            <id>spring.maven.milestone</id>
+            <name>Spring Milestone Repository</name>
+            <url>http://repo.springframework.org/milestone</url>
+        </repository>
+        <repository>
+            <id>spring.maven.snapshot</id>
+            <name>Spring Snapshot Repository</name>
+            <url>http://repo.springframework.org/snapshot</url>
+        </repository>
+
+        <repository>
+            <id>org.jboss.repository.releases</id>
+            <name>JBoss Maven Release Repository</name>
+            <url>https://repository.jboss.org/nexus/content/repositories/releases</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>eclipselink</id>
+            <url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
+        </repository>
+
+        <repository>
+            <id>apache.public</id>
+            <name>Apache public</name>
+            <url>https://repository.apache.org/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>apache.snapshots</id>
+            <name>Apache Snapshots</name>
+            <url>http://repository.apache.org/content/groups/snapshots-group/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+    </repositories>-->
+
+    <!-- PLUGIN REPOSITORIES ===============================================-->
+    <!-- PLUGIN REPOSITORIES ===============================================-->
+
+    <!--<pluginRepositories>
+
+        <pluginRepository>
+            <id>repo.maven.apache.org.maven2</id>
+            <name>Maven Repository</name>
+            <url>http://repo.maven.apache.org/maven2/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+
+        <pluginRepository>
+			<id>oss-sonatype-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</pluginRepository>
+
+  		<pluginRepository>
+      		<id>eviwarePluginRepository</id>
+      		<url>http://www.eviware.com/repository/maven2/</url>
+   		</pluginRepository>
+
+
+        <pluginRepository>
+            <id>apache.public</id>
+            <name>Apache public</name>
+            <url>https://repository.apache.org/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>apache.snapshots</id>
+            <name>Apache Snapshots</name>
+            <url>http://repository.apache.org/content/groups/snapshots-group/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+
+    </pluginRepositories>-->
+
+</project>

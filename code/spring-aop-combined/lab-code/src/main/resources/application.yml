@@ -1,0 +1,19 @@
+##---------------------------------------------------------------------------##
+## Datasource properties
+##---------------------------------------------------------------------------##
+spring:
+  datasource:
+    driver-class-name: org.apache.derby.jdbc.ClientDriver
+    url: jdbc:derby://localhost:50505/springclass
+    username: sa
+    password: password
+  hibernate:
+    dialect: org.hibernate.dialect.H2Dialect
+    show_sql: true
+    format_sql: true
+dev:
+  location:
+    id:
+      nl: AMS-LC0
+      us: BUR-1
+      fr: CDG-1

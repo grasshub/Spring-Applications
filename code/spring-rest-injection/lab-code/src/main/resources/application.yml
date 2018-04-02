@@ -1,0 +1,10 @@
+##---------------------------------------------------------------------------##
+## Project properties
+##---------------------------------------------------------------------------##
+---
+spring:
+  datasource:
+    driver-class-name: org.apache.derby.jdbc.ClientDriver
+    url: jdbc:derby://localhost:50505/springclass
+    username: sa
+    password: password

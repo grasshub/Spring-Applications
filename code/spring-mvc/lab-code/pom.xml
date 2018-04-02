@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>war</packaging>
+
+	<groupId>com.trivera.spring.code.spring-mvc</groupId>
+	<artifactId>mvc-lab</artifactId>
+	<name>Lab: Spring MVC</name>
+
+	<parent>
+		<groupId>com.trivera.spring.code</groupId>
+		<artifactId>spring-mvc</artifactId>
+		<version>2.0-RELEASE</version>
+	</parent>
+
+	<description>${project.name}</description>
+
+	<!--==================================================================== -->
+	<!-- PROPERTIES -->
+	<!--==================================================================== -->
+	<dependencies>
+	
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+		</dependency>
+
+	</dependencies>
+
+</project>

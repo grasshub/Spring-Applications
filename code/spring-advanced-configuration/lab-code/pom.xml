@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+
+    <groupId>com.trivera.spring.code.spring-advanced-configuration</groupId>
+    <artifactId>advanced-configuration-lab</artifactId>
+    <name>Lab: Spring advanced-configuration</name>
+
+    <parent>
+        <!-- New Way : -->
+        <groupId>com.trivera.spring.code</groupId>
+        <artifactId>spring-advanced-configuration</artifactId>
+        <version>2.0-RELEASE</version>
+    </parent>
+
+    <description>${project.name}</description>
+
+    <properties>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.trivera.spring.code</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

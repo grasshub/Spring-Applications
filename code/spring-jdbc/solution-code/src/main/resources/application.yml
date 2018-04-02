@@ -1,0 +1,22 @@
+##---------------------------------------------------------------------------##
+## DEFAULT properties
+##---------------------------------------------------------------------------##
+# Defaults for all profiles:
+spring:
+  profiles: default
+  name: default profile
+
+  location.id.nl: AMS-LC0
+  #location.id.nl: AMS-1
+
+  location.id.us: BUR-1
+  location.id.fr: CDG-1
+
+
+  datasource:
+    idleConnectionTestPeriodInSeconds: 60
+    idleMaxAge: 2
+
+  hibernate:
+    show_sql: true
+    format_sql: true

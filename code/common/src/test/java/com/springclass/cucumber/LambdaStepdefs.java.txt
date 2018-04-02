@@ -1,0 +1,11 @@
+package com.springclass.cucumber;
+
+import cucumber.api.java8.En;
+
+public class LambdaStepdefs implements En {
+    public LambdaStepdefs() {
+        Given("I have (\\d+) cukes in my belly", (Integer cukes) -> {
+            System.out.format("Cukes: %n\n", cukes);
+        });
+    }
+}
